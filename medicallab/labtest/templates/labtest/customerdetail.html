@@ -1,0 +1,67 @@
+{% extends 'labtest/base.html' %}
+{% load static %}
+
+{% block content %}
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    {% include 'labtest/nav.html' %}
+</aside>
+<div class="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- column -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- title -->
+                        <div class="d-md-flex">
+                            <div>
+                                <h4 class="card-title">DETAIL FOR CUSTOMER </h4>
+                            </div>
+                        </div>
+                        <!-- title -->
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table v-middle">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0">FIRSTNAME</th>
+                                    <th class="border-top-0">LASTNAME</th>
+                                    <th class="border-top-0">EMAIL</th>
+                                    <th class="border-top-0">PHONE</th>
+                                    <th class="border-top-0">SEX</th>
+                                    <th class="border-top-0">STAFF</th>
+                                    <th class="border-top-0">TEST DONE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for customer in customers %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="">
+                                                <h4 class="m-b-0 font-16">{{customer.firstname}}</h4>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{customer.lastname}}</td>
+                                    <td>{{customer.email}}</td>
+                                    <td>
+                                        <label>{{customer.phone}}</label>
+                                    </td>
+                                    <td>{{customer.sex}}</td>
+                                    <td>{{customer.staff_name.name}}</td>
+                                    <td>
+                                        <a href="{% url 'customer-detail' customer.pk %}">
+                                            <h5 class="m-b-0"></h5>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

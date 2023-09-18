@@ -1,0 +1,78 @@
+{% extends 'labtest/base.html' %}
+{% load static %}
+
+{% block content %}
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    {% include 'labtest/nav.html' %}
+</aside>
+<div class="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- column -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- title -->
+                        <div class="d-md-flex">
+                            <div>
+                                <h4 class="card-title">CREATE CUSTOMER FILE</h4>
+                            </div>
+                        </div>
+                        <!-- title -->
+                    </div>
+                    <div style="margin: 20px;">
+
+                        <h1>Create a New Customer Record</h1>
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="staff_name">Staff Name:</label>
+                                {{form.staff_name}}
+                            </div>
+                            <div class="form-group">
+                                <label for="email">FIRSTNAME:</label>
+                                {{form.firstname}}
+                            </div>
+                            <div class="form-group">
+                                <label for="password">LASTNAME:</label>
+                                {{form.lastname}}
+                            </div>
+                            <div class="form-group">
+                                <label for="username">OTHERNAMES</label>
+                                {{form.othernames}}
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                {{form.email}}
+                            </div>
+                            <div class="form-group">
+                                <label for="password">PHONE:</label>
+                                {{form.phone}}
+                            </div>
+                            <div class="form-group">
+                                <label for="username">SEX</label>
+                                {{form.sex}}
+                            </div>
+                            <div class="form-group">
+                                <label for="email">REFERRALSNAME</label>
+                                {{form.referralsname}}
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                        {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <ul>
+                                {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                <li>{{ field }}: {{ error }}</li>
+                                {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

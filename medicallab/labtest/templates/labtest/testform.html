@@ -1,0 +1,79 @@
+{% extends 'labtest/base.html' %}
+{% load static %}
+
+{% block content %}
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    {% include 'labtest/nav.html' %}
+</aside>
+<div class="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- column -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- title -->
+                        <div class="d-md-flex">
+                            <div>
+                                <h4 class="card-title">CREATE TEST FILE</h4>
+                            </div>
+                        </div>
+                        <!-- title -->
+                    </div>
+                    <div style="margin: 20px;">
+
+                        <h1>Create a New Test Record</h1>
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="staff_name">STAFF NAME</label>
+                                {{ form.user }}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="email">CUSTOMERNAME</label>
+                                {{form.customername}}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="password">TYPE OF TEST:</label>
+                                {{form.typeoftest}}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="username">CLINICAL DIAGNOSIS</label>
+                                {{form.clinicaldiagnosis}}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="email">NATURE OF SPECIMEN</label>
+                                {{form.natureofspecimen}}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="password">TYPE OF INVESTIGATION</label>
+                                {{form.typesofinvestigation}}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="username">BLOOD GROUP</label>
+                                {{form.bloodgroup}}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="email">GENOTYPE</label>
+                                {{form.genotype}}
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="email">RVS</label>
+                                {{form.rvs}}
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

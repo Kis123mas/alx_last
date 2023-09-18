@@ -1,0 +1,57 @@
+{% extends 'labtest/base.html' %}
+{% load static %}
+
+{% block content %}
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    {% include 'labtest/nav.html' %}
+</aside>
+<div class="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- column -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- title -->
+                        <div class="d-md-flex">
+                            <div>
+                                <h4 class="card-title">LIST OF STAFF</h4>
+                            </div>
+                        </div>
+                        <!-- title -->
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table v-middle">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0">NAME</th>
+                                    <th class="border-top-0">EMAIL</th>
+                                    <th class="border-top-0">TEST DONE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for staff in staff_list %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="">
+                                                <h4 class="m-b-0 font-16">{{staff.name}}</h4>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{staff.email}}</td>
+                                    <td>
+                                                <a href="{% url 'staff-tests' staff.id %}">
+                                                    <h5 class="m-b-0">{{ staff.test_count }}</h5>
+                                                </a>
+                                            </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

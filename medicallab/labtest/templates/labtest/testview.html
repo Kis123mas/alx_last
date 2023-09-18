@@ -1,0 +1,74 @@
+{% extends 'labtest/base.html' %}
+{% load static %}
+
+{% block content %}
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    {% include 'labtest/nav.html' %}
+</aside>
+<div class="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- column -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- title -->
+                        <div class="d-md-flex">
+                            <div>
+                                <h4 class="card-title">TEST LIST </h4>
+                            </div>
+                        </div>
+                        <!-- title -->
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table v-middle">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0">STAFFNAME</th>
+                                    <th class="border-top-0">CUSTOMERNAME</th>
+                                    <th class="border-top-0">TYPE OF TEST</th>
+                                    <th class="border-top-0">CLINICAL DIAG.</th>
+                                    <th class="border-top-0">NATURE OF SPECIMEN</th>
+                                    <th class="border-top-0">TYPE OF INVEST.</th>
+                                    <th class="border-top-0">BLOOD GROUP</th>
+                                    <th class="border-top-0">GENOTYPE</th>
+                                    <th class="border-top-0">RVS</th>
+                                    <th class="border-top-0">DOWNLOAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for tes in test %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="">
+                                                <h4 class="m-b-0 font-16">{{tes.user}}</h4>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{tes.customername}}</td>
+                                    <td>{{tes.typeoftest}}</td>
+                                    <td>
+                                        <label>{{tes.clinicaldiagnosis}}</label>
+                                    </td>
+                                    <td>{{tes.natureofspecimen}}</td>
+                                    <td>{{tes.typesofinvestigation}}</td>
+                                    <td>
+                                        {{tes.bloodgroup}}
+                                    </td>
+                                    <td>{{tes.genotype}}</td>
+                                    <td>{{tes.rvs}}</td>
+                                    <td>
+                                        <a href="{% url 'test-detail' pk=tes.pk %}">Link</a>
+                                    </td>
+                                </tr>
+
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

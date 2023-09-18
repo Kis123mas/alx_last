@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Test Result</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <a class="navbar-brand" href="#">
+                                <img src="" width="30" height="30" class="d-inline-block align-top" alt="Your Logo">
+                                BMC
+                            </a>
+                            <h1 class="navbar-text">Clinic Lab Test Result</h1>
+                        </nav>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            {% for test in tes %}
+                            <tbody>
+                                <tr>
+                                    <th scope="row">User:</th>
+                                    <td>{{test.user}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Customer Name:</th>
+                                    <td>{{test.customername}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Type of Test:</th>
+                                    <td>{{test.typeoftest}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Clinical Diagnosis:</th>
+                                    <td>{{test.clinicaldiagnosis}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Nature of Specimen:</th>
+                                    <td>{{test.natureofspecimen}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Types of Investigation:</th>
+                                    <td>{{test.typesofinvestigation}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Genotype:</th>
+                                    <td>{{test.genotype}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RVS:</th>
+                                    <td>{{test.rvs}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Blood Group:</th>
+                                    <td>{{test.bloodgroup}}</td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <p>Management Signature:</p>
+                    <div style="border-bottom: 1px solid #000; width: 200px; margin: 0 auto;"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- <a href="{% url 'pdf'%}" class="btn btn-primary">download</a> -->
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
