@@ -18,40 +18,40 @@
             </li>
             <li class="p-15 m-t-10"><a href="{% url 'create-customer' %}"
                     class="btn d-block w-100 create-btn text-white no-block d-flex align-items-center"><i
-                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">Add Customer</span>
+                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">ADD PATIENT</span>
                 </a>
             </li>
             <li class="p-15 m-t-10"><a href="{% url 'create-test' %}"
                     class="btn d-block w-100 create-btn text-white no-block d-flex align-items-center"><i
-                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">Create Test</span>
+                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">CREATE TEST</span>
                 </a>
             </li>
             {% if user.is_superuser %}
             <li class="p-15 m-t-10"><a href="{% url 'customer-list' %}"
                     class="btn d-block w-100 create-btn text-white no-block d-flex align-items-center"><i
-                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">Customer List</span>
+                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">LIST OF PATIENTS</span>
                 </a>
             </li>
             <li class="p-15 m-t-10"><a href="{% url 'staff-list' %}"
                     class="btn d-block w-100 create-btn text-white no-block d-flex align-items-center"><i
-                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">Staff List</span>
+                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">LIST OF STAFFS</span>
                 </a>
             </li>
             <li class="p-15 m-t-10"><a href="{% url 'register' %}"
                     class="btn d-block w-100 create-btn text-white no-block d-flex align-items-center"><i
-                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">Add Staff</span>
+                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">REGISTER STAFF</span>
                 </a>
             </li>
 
             <li class="p-15 m-t-10"><a href="{% url 'test-list' %}"
                     class="btn d-block w-100 create-btn text-white no-block d-flex align-items-center"><i
-                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">Test List</span>
+                        class="fa fa-plus-square"></i> <span class="hide-menu m-l-5">LIST OF TEST</span>
                 </a>
             </li>
             {% endif %}
             <li class="p-15 m-t-10"><a href="{% url 'logout' %}"
                     class="btn d-block w-100 create-btn text-white no-block d-flex align-items-center"><i></i>
-                    <span class="hide-menu m-l-5">LogOut</span>
+                    <span class="hide-menu m-l-5">LOGOUT</span>
                 </a>
             </li>
         </ul>
