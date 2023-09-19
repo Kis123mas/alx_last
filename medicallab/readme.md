@@ -1,5 +1,4 @@
-## medical laboratory test, patient and staff management API
-
+## Basclef Medical Diagnostics System
 A solution that manages customers, staff, tests and all activities of a medical laboratory facility.
 
 
@@ -7,162 +6,177 @@ A solution that manages customers, staff, tests and all activities of a medical 
 This is a django rest api that keeps track of every result that is given to a patient in a medical organization.
 
 ## Programming Language Used:
-* Python Programming Language
+*Python Programming Language
 
 ## Technologies Used:
 All of the following are technologies used in this project:
+# Laboratory Management System
 
-| Backend | Django |
-| -------- | ----------- |
-| Api | Django REST framework |
-| -------- | ----------- |
-| Project Management and Version Control | Github |
-| -------- | ----------- |
-| Database | sqlite |
-| -------- | ----------- |
-| Test of Endpoints | Postman |
+
+## Description
+
+This Django web application is designed for managing laboratory tests, customers, and staff members.
+
+## Technologies Used
+
+- **Django**: Django is a high-level Python web framework that provides various tools and libraries for building web applications.
+
+- **Django REST framework**: Django REST framework is an extension for Django that simplifies the creation of RESTful APIs. It's used for creating API endpoints in the project.
+
+- **Python**: The project is written in Python, which is the primary programming language for Django.
+
+- **PDFKit**: PDFKit is used for generating PDF documents from HTML and CSS. It is configured with the `wkhtmltopdf` executable for PDF generation.
+
+- **BOOSTRAP and CSS**: These are fundamental technologies for building web pages and styling them.
+
+- **JavaScript**: While it's not explicitly mentioned in the provided code, JavaScript is often used in web applications for client-side interactivity.
+
+- **Database (SQLITE)**: Django typically uses relational databases (e.g., PostgreSQL, MySQL, SQLite) for data storage. The specific database used in the project is sqlite\
+## Installation and Usage
+
+1. Clone this repository to your local machine.
+
+```bash
+git clone https://github.com/your-username/laboratory-management-system.git
 
 ## users
-| STAFF | ADMIN |
+| STAFF | ADMIN(superuser) |
 
-## super-admin activities and permissions
-[__Register__]- staff can register by filling up thr registeration form by giving their details like email, firstname, lastname, password and username.
+## admin activities and permissions
+Summarizing the different views and permissions:
 
-[__Login__] - Only Registered staff can login using just their username and password.
+This is a Django project that includes various views and APIs for managing user registration, authentication, and other related functionalities. Below, you'll find a summary of the different views and their associated user permissions in this project.
 
-[__Logout__] - Login staff can logout using their token.
+## Views and Permissions
 
-[__CreateCustomer__] - staff can create customer account.
+# Application Permissions
 
-[__ViewCustomerDetails__] - staff can view customer details.
+This README provides an overview of the permissions associated with various links and actions in our application.
 
-[__UpdateCustomerDetails__] - staff can update customer details.
+## User Permissions
 
-## staff activities and permissions
+### User Profile Link
+- **Permission**: Read (View)
+- **Description**: Users can view their own profile information.
 
-[__Login__] - Only Registered staff can login using just their username and password.
+### ADD PATIENT Link
+- **Permission**: Create (Add)
+- **Description**: Users can add new patient records.
 
-[__Logout__] - Login staff can logout using their token.
+### CREATE TEST Link
+- **Permission**: Create (Add)
+- **Description**: Users can create new tests.
 
-[__CreateCustomer__] - staff can create customer account.
+## Superuser Permissions
 
-[__addtest__] - staff can view customer details.
+The following permissions are only applicable to superusers who have additional privileges:
 
+### LIST OF PATIENTS Link
+- **Permission**: Read (View)
+- **Description**: Superusers can view a list of all patient records.
 
+### LIST OF STAFFS Link
+- **Permission**: Read (View)
+- **Description**: Superusers can view a list of all staff members.
 
+### REGISTER STAFF Link
+- **Permission**: Create (Add)
+- **Description**: Superusers can register new staff members.
 
-## admin activities and login
-[__Register__]- admin can register by filling up the registeration form by giving their details like email, firstname, lastname, password and username.
+### LIST OF TEST Link
+- **Permission**: Read (View)
+- **Description**: Superusers can view a list of all tests.
 
-[__Login__] - Only Registered admin can login using just their username and password.
+## Other Actions
 
-[__Logout__] - Login admin can logout using their token.
+### LOGOUT Link
+- **Permission**: Perform Action (Logout)
+- **Description**: Users can log out of their accounts.
 
-[__Viewstaff__] - admin can view registered staff.
-
-[__DeleteStaff__] - admin can delete registered staff.
-
-[__CreateCustomer__] - admin can create customer account.
-
-[__ViewCustomerDetails__] - admin can view customer details.
-
-[__UpdateCustomerDetails__] - admin can update customer details.
-
-[__DeleteCustomer__] - admin can delete customer account.
-
-
-## EndPoints Test
-* Application used for testing the endpoints - *POSTMAN*
-
-[__REGISTER ENDPOINT__]
-
-USER REGISTERATION TEST. 
-| Request | POST |
-| -------- | ----------- |
-| Url | POST  http://127.0.0.1:8000/diagnostic/register/ |
-| -------- | ----------- |
-| Select body, and then click on form-data | fill in these keys  : username, password, email, first_name and last_name *fill in your values for the keys and send* |
-| -------- | ----------- |
-| status | 200_OK - Registeration was successful.|
-| -------- | ----------- |
-| status | 400 Bad Request - Error in registeration |
+These permissions determine what actions users and superusers are allowed to perform within the application. Please make sure to configure your application's authentication and authorization system accordingly.
 
 
 
-[__LOGIN ENDPOINT__]
-
-LOGIN REGISTERATION TEST.
-
-| Request | POST |
-| -------- | ----------- |
-| Url | POST  http://127.0.0.1:8000/diagnostic/login/ |
-| -------- | ----------- |
-| Select body, and then click on form-data | fill in these keys  : username and password *fill in your values for the keys and send* |
-| -------- | ----------- |
-| status | 200_OK - Login was successful.|
-| -------- | ----------- |
-| status | 400 Bad Request - Error in login |
+## EndPoints
+* Application used for testing the endpoints - *DRF (Django Rest Framework) Test*
 
 
-[__CREATE CUSTOMER ENDPOINT__]
+## URL Patterns
 
-CREATE CUSTOMER ENDPOINT TEST.
+### Landing Page
+- URL: `/`
+- View: `LandingAPI`
+- Description: This is the landing page of our application.
 
-| Request | POST |
-| -------- | ----------- |
-| Url | POST  http://127.0.0.1:8000/diagnostic/customer/ |
-| -------- | ----------- |
-| Select headers | create this key  : Authorization | fill in your token  : in these format *Token <input token here>* |
-| -------- | ----------- |
-| Select body, and then click on x-www-form-urlencoded | create in these keys  : old_password, new-password *fill in your values for the keys and send* |
-| -------- | ----------- |
-| status | 200_OK - Password Updated successfully.|
-| -------- | ----------- |
-| status | 401 Unauthorized, 400 Bad request |
+### Download View
+- URL: `/download`
+- View: `views.download`
+- Description: Allows users to download something.
 
-[__VIEW CUSTOMERS ENDPOINT__]
+### PDF Generation View
+- URL: `/pdf/`
+- View: `views.generatePDF`
+- Description: Generates a PDF.
 
-VIEW CUSTOMER ENDPOINT TEST.
+### Dashboard
+- URL: `/dashboard/`
+- View: `DashboardAPI`
+- Description: Provides access to the user's dashboard.
 
-| Request | GET |
-| -------- | ----------- |
-| Url | GET  http://127.0.0.1:8000/diagnostic/customer/ |
-| -------- | ----------- |
-| Select headers | fill in your token  : in these format *Token <input token here>* |
-| -------- | ----------- |
-| status | 200_OK - Userdetail was successful.|
-| -------- | ----------- |
-| status | 400 Bad Request - Error in Userdetail |
+### User Registration
+- URL: `/register/`
+- View: `RegisterAPI`
+- Description: Allows users to register for an account.
 
+### User Login
+- URL: `/login/`
+- View: `LoginAPI`
+- Description: Allows users to log in to their accounts.
 
-[__UPDATE ENDPOINT__]
+### User Logout
+- URL: `/logout/`
+- View: `views.user_logout`
+- Description: Logs the user out of their account.
 
-UPDATE ENDPOINT TEST.
+### Staff List View
+- URL: `/staff/`
+- View: `StaffListView`
+- Description: Lists staff members.
 
-| Request | PUT |
-| -------- | ----------- |
-| Url | PUT  http://127.0.0.1:8000/diagnostic/customer/ |
-| -------- | ----------- |
-| Select headers | create this key  : Authorization | fill in your token  : in these format *Token <input token here>* |
-| -------- | ----------- |
-| status | 204 No content - Logout successful.|
-| -------- | ----------- |
-| status | 401 Unauthorized (invalid token), 400 Bad request |
+### Staff Tests View
+- URL: `/staff/<int:staff_id>/tests/`
+- View: `views.staff_tests`
+- Description: Lists tests associated with a specific staff member.
 
-[__DELETE ENDPOINT__]
+### Create Customer View
+- URL: `/create-customer/`
+- View: `CreateCustomerView`
+- Description: Allows the creation of customer records.
 
-DELETE ENDPOINT TEST.
+### Customer List View
+- URL: `/customers/`
+- View: `CustomerListView`
+- Description: Lists customer records.
 
-| Request | DELETE |
-| -------- | ----------- |
-| Url | DELETE  http://127.0.0.1:8000/diagnostic/customer/ |
-| -------- | ----------- |
-| Select headers | create this key  : Authorization | fill in your token  : in these format *Token <input token here>* |
-| -------- | ----------- |
-| status | 204 No content - Logout successful.|
-| -------- | ----------- |
-| status | 401 Unauthorized (invalid token), 400 Bad request |
+### Customer Detail View
+- URL: `/customers/<int:pk>/`
+- View: `CustomerDetailView`
+- Description: Displays details of a specific customer record.
 
+### Create Test View
+- URL: `/create-test/`
+- View: `CreateTestView`
+- Description: Allows the creation of test records.
+
+### Test List View
+- URL: `/test-list/`
+- View: `TestListView`
+- Description: Lists test records.
+
+### Test Detail View
+- URL: `/test/<int:pk>/`
+- View: `TestDetailView`
+- Description: Displays details of a specific test record.
 
 ## Project Status
 Project is : *in progress*
@@ -189,11 +203,11 @@ Setting up project locally is a pretty easy step.
 
 1. Clone the repo
   ```sh
-  git clone https://github.com/Kis123mas/API-AUTHENTICATION.git
+  git clone https://github.com/Kis123mas/alx_project.git
   ```
 2. Move into the project directory
   ```
-  cd authentication
+  cd medicallab
   ```
 3. Create a virtual environment
   ```
