@@ -8,14 +8,6 @@ This is a django rest api that keeps track of every result that is given to a pa
 ## Programming Language Used:
 *Python Programming Language
 
-## Technologies Used:
-All of the following are technologies used in this project:
-# Laboratory Management System
-
-
-## Description
-
-This Django web application is designed for managing laboratory tests, customers, and staff members.
 
 ## Technologies Used
 
