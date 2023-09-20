@@ -447,6 +447,33 @@ class TestListView(LoginRequiredMixin, ListView):
     paginate_by = 10
 
 
+# TestListView class displays a list of test records.
+
+class StaffTestList(LoginRequiredMixin, ListView):
+    """
+    TestListView class provides a view for displaying a list of test records.
+
+    This class inherits from LoginRequiredMixin, ensuring that only authenticated users can access it.
+    It utilizes the 'Test' model to retrieve and display test records.
+
+    Attributes:
+        model (model): Specifies the model used for retrieving test records (Test).
+        template_name (str): Specifies the HTML template used for rendering the test records.
+        context_object_name (str): Defines the name of the context variable containing the list of test records.
+        paginate_by (int): Sets the number of items displayed per page (you can change this value).
+
+    HTTP Method:
+        - GET: Renders the test records page, displaying a list of test records.
+
+    Template:
+        'labtest/testview.html' - The HTML template for displaying the list of test records.
+    """
+    model = Test
+    template_name = 'labtest/staffprinttest.html'
+    context_object_name = 'test'
+    paginate_by = 10
+
+
 
 
 # TestDetailView class displays detailed information about a specific test.

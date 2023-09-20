@@ -25,6 +25,7 @@ urlpatterns = [
 
     path('create-test/', CreateTestView.as_view(), name='create-test'),
     path('test-list/', TestListView.as_view(), name='test-list'),
+    path('staff-test-list/', StaffTestList.as_view(), name='staff-test-list'),
     path('test/<int:pk>/', TestDetailView.as_view(), name='test-detail'),
 
 ]
